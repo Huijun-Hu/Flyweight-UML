@@ -1,0 +1,243 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>testDocument : Document</u>" as td{
+    CHARACTERS : Character[*]
+}
+object "<u>propertiesFactory : CharacterPropertiesFactory</u>" as pf{
+    FLYWEIGHTS : Map<String, CharacterProperties>
+}
+object "<u>H : Character</u>" as c1{
+    character = 'H'
+}
+object "<u>e : Character</u>" as c2{
+    character = 'e'
+}
+object "<u>l : Character</u>" as c3{
+    character = 'l'
+}
+object "<u>l : Character</u>" as c4{
+    character = 'l'
+}
+object "<u>o : Character</u>" as c5{
+    character = 'o'
+}
+object "<u>W : Character</u>" as c6{
+    character = 'W'
+}
+object "<u>o : Character</u>" as c7{
+    character = 'o'
+}
+object "<u>r : Character</u>" as c8{
+    character = 'r'
+}
+object "<u>l : Character</u>" as c9{
+    character = 'l'
+}
+object "<u>d : Character</u>" as c10{
+    character = 'd'
+}
+object "<u>C : Character</u>" as c11{
+    character = 'C'
+}
+object "<u>S : Character</u>" as c12{
+    character = 'S'
+}
+object "<u>5 : Character</u>" as c13{
+    character = '5'
+}
+object "<u>8 : Character</u>" as c14{
+    character = '8'
+}
+object "<u>0 : Character</u>" as c15{
+    character = '0'
+}
+object "<u>0 : Character</u>" as c16{
+    character = '0'
+}
+
+object "<u>ArialBlack16 : CharacterProperties</u>" as p1{
+    FONT : "Arial"
+    COLOR : "Black"
+    SIZE : 16
+}
+object "<u>ArialBlack14 : CharacterProperties</u>" as p2{
+    FONT : "Arial"
+    COLOR : "Black"
+    SIZE : 14
+}
+object "<u>VerdanaBlue18 : CharacterProperties</u>" as p3{
+    FONT : "Verdana"
+    COLOR : "Blue"
+    SIZE : 18
+}
+object "<u>VerdanaRed12 : CharacterProperties</u>" as p4{
+    FONT : "Verdana"
+    COLOR : "Red"
+    SIZE : 12
+}
+c1 o-- p1
+c2 o-- p2
+c3 o-- p2
+c4 o-- p2
+c5 o-- p2
+c6 o-- p1
+c7 o-- p2
+c8 o-- p2
+c9 o-- p2
+c10 o-- p2
+
+c11 o-- p3
+c12 o-- p3
+c13 o-- p4
+c14 o-- p4
+c15 o-- p4
+c16 o-- p4
+
+td *-- c1
+td *-- c2
+td *-- c3
+td *-- c4
+td *-- c5
+td *-- c6
+td *-- c7
+td *-- c8
+td *-- c9
+td *-- c10
+td *-- c11
+td *-- c12
+td *-- c13
+td *-- c14
+td *-- c15
+td *-- c16
+
+td *-- pf
+'this line is used to layout the diagram
+td -up[hidden]- pf
+
+pf *-- p1
+pf *-- p2
+pf *-- p3
+pf *-- p4
+
+'new document created, and so as a set of characters
+object "<u>readDocumentVerify : Document</u>" as rdv{
+    CHARACTERS : Character[*]
+}
+object "<u>propertiesFactory : CharacterPropertiesFactory</u>" as pf_rdv{
+     FLYWEIGHTS : Map<String, CharacterProperties>
+}
+object "<u>H : Character</u>" as c1_rdv{
+    character = 'H'
+}
+object "<u>e : Character</u>" as c2_rdv{
+    character = 'e'
+}
+object "<u>l : Character</u>" as c3_rdv{
+    character = 'l'
+}
+object "<u>l : Character</u>" as c4_rdv{
+    character = 'l'
+}
+object "<u>o : Character</u>" as c5_rdv{
+    character = 'o'
+}
+object "<u>W : Character</u>" as c6_rdv{
+    character = 'W'
+}
+object "<u>o : Character</u>" as c7_rdv{
+    character = 'o'
+}
+object "<u>r : Character</u>" as c8_rdv{
+    character = 'r'
+}
+object "<u>l : Character</u>" as c9_rdv{
+    character = 'l'
+}
+object "<u>d : Character</u>" as c10_rdv{
+    character = 'd'
+}
+object "<u>C : Character</u>" as c11_rdv{
+    character = 'C'
+}
+object "<u>S : Character</u>" as c12_rdv{
+    character = 'S'
+}
+object "<u>5 : Character</u>" as c13_rdv{
+    character = '5'
+}
+object "<u>8 : Character</u>" as c14_rdv{
+    character = '8'
+}
+object "<u>0 : Character</u>" as c15_rdv{
+    character = '0'
+}
+object "<u>0 : Character</u>" as c16_rdv{
+    character = '0'
+}
+object "<u>ArialBlack16 : CharacterProperties</u>" as p1_rdv{
+    FONT : "Arial"
+    COLOR : "Black"
+    SIZE : 16
+}
+object "<u>ArialBlack14 : CharacterProperties</u>" as p2_rdv{
+    FONT : "Arial"
+    COLOR : "Black"
+    SIZE : 14
+}
+object "<u>VerdanaBlue18 : CharacterProperties</u>" as p3_rdv{
+    FONT : "Verdana"
+    COLOR : "Blue"
+    SIZE : 18
+}
+object "<u>VerdanaRed12 : CharacterProperties</u>" as p4_rdv{
+    FONT : "Verdana"
+    COLOR : "Red"
+    SIZE : 12
+}
+
+c1_rdv o-- p1_rdv
+c2_rdv o-- p2_rdv
+c3_rdv o-- p2_rdv
+c4_rdv o-- p2_rdv
+c5_rdv o-- p2_rdv
+c6_rdv o-- p1_rdv
+c7_rdv o-- p2_rdv
+c8_rdv o-- p2_rdv
+c9_rdv o-- p2_rdv
+c10_rdv o-- p2_rdv
+
+c11_rdv o-- p3_rdv
+c12_rdv o-- p3_rdv
+c13_rdv o-- p4_rdv
+c14_rdv o-- p4_rdv
+c15_rdv o-- p4_rdv
+c16_rdv o-- p4_rdv
+
+rdv *-- c1_rdv
+rdv *-- c2_rdv
+rdv *-- c3_rdv
+rdv *-- c4_rdv
+rdv *-- c5_rdv
+rdv *-- c6_rdv
+rdv *-- c7_rdv
+rdv *-- c8_rdv
+rdv *-- c9_rdv
+rdv *-- c10_rdv
+rdv *-- c11_rdv
+rdv *-- c12_rdv
+rdv *-- c13_rdv
+rdv *-- c14_rdv
+rdv *-- c15_rdv
+rdv *-- c16_rdv
+
+rdv *-- pf_rdv
+
+'this line is used to layout the diagram
+rdv -up[hidden]- pf_rdv
+
+pf_rdv *-- p1_rdv
+pf_rdv *-- p2_rdv
+pf_rdv *-- p3_rdv
+pf_rdv *-- p4_rdv
+@enduml
