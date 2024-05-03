@@ -250,5 +250,4 @@ pf_rdv *-- p2_rdv
 pf_rdv *-- p3_rdv
 pf_rdv *-- p4_rdv
 pf_rdv *-- p5
-
 @enduml
