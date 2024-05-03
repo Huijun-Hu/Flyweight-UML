@@ -76,6 +76,7 @@ object "<u>VerdanaRed12 : CharacterProperties</u>" as p4{
     COLOR : "Red"
     SIZE : 12
 }
+
 c1 o-- p1
 c2 o-- p2
 c3 o-- p2
